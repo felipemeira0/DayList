@@ -90,8 +90,8 @@ struct node *doubleRotateRight(struct node *p) {
     struct node *res;
     if (p != NULL) {
         res = malloc(sizeof(struct node));
-        p->right = rotateLeft(p->right);
-        res = rotateRight(p);
+        p->right = rotateRight(p->right);
+        res = rotateLeft(p);
         return res;
     }
 }
@@ -150,7 +150,7 @@ int main() {
     av = newAVL(av, id, na, sna, bdate);
     // first data called Ricardo Costa here...
     if (av != NULL) {
-        printf("%d %s %s\n", av->id, av->name, av->surname);
+        printf("Found a first data: %d %s %s\n", av->id, av->name, av->surname);
     } else {
         printf("Cannot find first data in the database...\n");
     }
